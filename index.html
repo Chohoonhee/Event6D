@@ -122,12 +122,12 @@
             </a>
           </div>
 
-          <!-- Teaser Image -->
+          <!-- Main Demo Video (hero) -->
           <div class="teaser-container" style="margin-top: 2.5rem;">
-            <!-- Replace with your own teaser image -->
-            <img src="static/images/thumbnail.png"
-                 alt="Paper Teaser Image"
-                 onerror="this.src='https://placehold.co/900x450/1a1a3e/b3c8ff?text=Teaser+Image';" />
+            <video autoplay loop muted playsinline controls
+                   style="width:100%; display:block; border-radius:0;">
+              <source src="static/videos/main_demo_compressed.mp4" type="video/mp4" />
+            </video>
           </div>
           <p class="teaser-caption">
             <b>Figure 1:</b> Conventional RGB-D based methods often fail under highly dynamic scenes
@@ -211,24 +211,17 @@
 <section class="section-custom" id="video">
   <div class="container">
 
-    <!-- ── Main Demo Video (YouTube) ───────────────────── -->
+    <!-- Section title -->
     <div class="columns is-centered">
       <div class="column is-10 fade-in">
-        <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem;">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 2.5rem; display:block;">
           Video
         </h2>
-        <div class="video-container">
-          <video autoplay loop muted playsinline controls>
-            <source src="static/videos/main_demo.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <!-- TODO: Update caption -->
-        <p class="video-caption">Qualitative demonstration of EventTrack6D on challenging real-world scenarios.</p>
       </div>
     </div>
 
     <!-- ── Row 1: 2 videos ──────────────────────────────── -->
-    <div class="columns is-centered" style="margin-top: 3rem;">
+    <div class="columns is-centered">
       <div class="column is-10">
         <h3 class="has-text-centered" style="font-family:'Google Sans',sans-serif; font-size:1.15rem;
             font-weight:700; color:var(--primary); margin-bottom:1.5rem;">Qualitative Comparisons</h3>
