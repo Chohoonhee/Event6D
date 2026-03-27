@@ -75,10 +75,10 @@
               <a href="https://chohoonhee.github.io/hoonheecho/" target="_blank">Hoonhee Cho</a><sup class="superscript-star">*</sup>,
             </span>
             <span class="author-block">
-              <a href="#" target="_blank">Taeyeop Lee</a><sup class="superscript-star">*</sup>,
+              <a href="https://sites.google.com/view/taeyeop-lee/" target="_blank">Taeyeop Lee</a><sup class="superscript-star">*</sup>,
             </span>
-            <span class="author-block" style="color:rgba(255,255,255,0.8);">
-              Minjun Kang,
+            <span class="author-block">
+              <a href="https://sites.google.com/view/minjun-kang" target="_blank">Minjun Kang</a>,
             </span>
             <span class="author-block">
               <a href="https://wenbowen123.github.io/" target="_blank">Bowen Wen</a>,
@@ -86,8 +86,8 @@
             <span class="author-block" style="color:rgba(255,255,255,0.8);">
               Youngho Kim,
             </span>
-            <span class="author-block" style="color:rgba(255,255,255,0.8);">
-              Kuk-Jin Yoon
+            <span class="author-block">
+              <a href="https://vi.kaist.ac.kr/pages/home/" target="_blank">Kuk-Jin Yoon</a>
             </span>
           </div>
 
@@ -239,9 +239,10 @@
         <div class="columns fade-in">
 
           <div class="column is-6">
-            <!-- TODO: Replace static/videos/comparison1.mp4 -->
+            <!-- TODO: Replace static/videos/comparison1.mp4
+                 GIF 사용 시: <video> 태그 대신 <img src="static/videos/comparison1.gif" style="width:100%;border-radius:8px;"> 로 교체 -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/comparison1.mp4" type="video/mp4" />
               </video>
             </div>
@@ -250,9 +251,10 @@
           </div>
 
           <div class="column is-6">
-            <!-- TODO: Replace static/videos/comparison2.mp4 -->
+            <!-- TODO: Replace static/videos/comparison2.mp4
+                 GIF 사용 시: <video> 태그 대신 <img src="static/videos/comparison2.gif" style="width:100%;border-radius:8px;"> 로 교체 -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/comparison2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -272,9 +274,10 @@
         <div class="columns fade-in">
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/result1.mp4 -->
+            <!-- TODO: Replace static/videos/result1.mp4
+                 GIF 사용 시: <img src="static/videos/result1.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/result1.mp4" type="video/mp4" />
               </video>
             </div>
@@ -283,9 +286,10 @@
           </div>
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/result2.mp4 -->
+            <!-- TODO: Replace static/videos/result2.mp4
+                 GIF 사용 시: <img src="static/videos/result2.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/result2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -294,9 +298,10 @@
           </div>
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/result3.mp4 -->
+            <!-- TODO: Replace static/videos/result3.mp4
+                 GIF 사용 시: <img src="static/videos/result3.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/result3.mp4" type="video/mp4" />
               </video>
             </div>
@@ -316,9 +321,10 @@
         <div class="columns fade-in">
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/ho3d1.mp4 -->
+            <!-- TODO: Replace static/videos/ho3d1.mp4
+                 GIF 사용 시: <img src="static/videos/ho3d1.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/ho3d1.mp4" type="video/mp4" />
               </video>
             </div>
@@ -327,9 +333,10 @@
           </div>
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/ho3d2.mp4 -->
+            <!-- TODO: Replace static/videos/ho3d2.mp4
+                 GIF 사용 시: <img src="static/videos/ho3d2.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/ho3d2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -338,9 +345,10 @@
           </div>
 
           <div class="column is-4">
-            <!-- TODO: Replace static/videos/ho3d3.mp4 -->
+            <!-- TODO: Replace static/videos/ho3d3.mp4
+                 GIF 사용 시: <img src="static/videos/ho3d3.gif" style="width:100%;border-radius:8px;"> -->
             <div class="video-container">
-              <video controls loop muted playsinline>
+              <video autoplay loop muted playsinline>
                 <source src="static/videos/ho3d3.mp4" type="video/mp4" />
               </video>
             </div>
@@ -644,7 +652,7 @@
     document.addEventListener('touchend',  () => dragging = false);
   });
 
-  /* ── Auto-play videos when visible ──────────── */
+  /* ── Auto-play videos when visible (loop + muted) ─── */
   const videoObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
@@ -654,9 +662,23 @@
         video.pause();
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 });
 
-  document.querySelectorAll('video[autoplay], video.autoplay').forEach(v => videoObserver.observe(v));
+  document.querySelectorAll('video[autoplay]').forEach(v => videoObserver.observe(v));
+
+  /* ── Hide broken video containers (no src loaded) ───── */
+  document.querySelectorAll('video').forEach(v => {
+    v.addEventListener('error', () => {
+      const container = v.closest('.video-container');
+      if (container) {
+        container.style.background = '#f0f4ff';
+        container.style.display = 'flex';
+        container.style.alignItems = 'center';
+        container.style.justifyContent = 'center';
+        container.innerHTML = '<span style="color:#6c757d;font-size:0.85rem;padding:2rem;">Video placeholder — replace mp4 file</span>';
+      }
+    });
+  });
 </script>
 
 </body>
