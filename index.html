@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Event6D: Event-based Novel Object 6D Pose Tracking — CVPR 2026 Project Page" />
+
+  <title>Event6D: Event-based Novel Object 6D Pose Tracking</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="static/css/index.css" />
+</head>
+
+<body>
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   NAVIGATION BAR                       -->
+<!-- ╚══════════════════════════════════════╝ -->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        ✦ Event6D
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+         data-target="navbarMenu" id="navbarBurger">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#abstract">Abstract</a>
+        <a class="navbar-item" href="#method">Method</a>
+        <a class="navbar-item" href="#video">Video</a>
+        <a class="navbar-item" href="#results">Results</a>
+        <a class="navbar-item" href="#bibtex">BibTeX</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   HERO SECTION                         -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="hero is-dark-custom">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10 has-text-centered">
+
+          <!-- Venue Badge -->
+          <div class="publication-venue">CVPR 2026</div>
+
+          <!-- Paper Title -->
+          <h1 class="publication-title">
+            Event6D: Event-based Novel Object<br/>
+            6D Pose Tracking
+          </h1>
+
+          <!-- Authors -->
+          <div style="margin-bottom: 0.75rem;">
+            <span class="author-block">
+              <a href="https://mickeykang16.github.io/" target="_blank">Jae-Young Kang</a><sup class="superscript-star">*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://chohoonhee.github.io/hoonheecho/" target="_blank">Hoonhee Cho</a><sup class="superscript-star">*</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#" target="_blank">Taeyeop Lee</a><sup class="superscript-star">*</sup>,
+            </span>
+            <span class="author-block" style="color:rgba(255,255,255,0.8);">
+              Minjun Kang,
+            </span>
+            <span class="author-block">
+              <a href="https://wenbowen123.github.io/" target="_blank">Bowen Wen</a>,
+            </span>
+            <span class="author-block" style="color:rgba(255,255,255,0.8);">
+              Youngho Kim,
+            </span>
+            <span class="author-block" style="color:rgba(255,255,255,0.8);">
+              Kuk-Jin Yoon
+            </span>
+          </div>
+
+          <!-- Affiliation -->
+          <div class="affiliation">
+            <a href="https://vi.kaist.ac.kr/" target="_blank"
+               style="color:#b3c8ff; text-decoration:none; font-weight:600;">
+              VILAB
+            </a>, KAIST &nbsp;·&nbsp;
+            <a href="https://www.nvidia.com/" target="_blank"
+               style="color:#76b900; text-decoration:none; font-weight:600;">
+              NVIDIA
+            </a>
+          </div>
+
+          <!-- Equal contribution note -->
+          <p class="equal-contrib-note">* Indicates Equal Contribution</p>
+
+          <!-- Link Buttons -->
+          <div class="link-buttons">
+            <a href="static/pdfs/paper.pdf" target="_blank" class="link-btn primary-btn">
+              <i class="fas fa-file-pdf"></i> Paper
+            </a>
+            <a href="https://github.com/mickeykang16/Event6D" target="_blank" class="link-btn primary-btn">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a href="https://github.com/mickeykang16/Event6D" target="_blank" class="link-btn primary-btn">
+              <i class="fas fa-database"></i> Dataset
+            </a>
+            <a href="static/pdfs/supplementary.pdf" target="_blank" class="link-btn primary-btn">
+              <i class="fas fa-paperclip"></i> Supplementary
+            </a>
+          </div>
+
+          <!-- Teaser Image -->
+          <div class="teaser-container" style="margin-top: 2.5rem;">
+            <!-- Replace with your own teaser image -->
+            <img src="static/images/thumbnail.png"
+                 alt="Paper Teaser Image"
+                 onerror="this.src='https://placehold.co/900x450/1a1a3e/b3c8ff?text=Teaser+Image';" />
+          </div>
+          <p class="teaser-caption">
+            <b>Figure 1:</b> Conventional RGB-D based methods often fail under highly dynamic scenes
+            due to limited frame rate. Our <b>EventTrack6D</b> addresses this by reconstructing dual modalities
+            (image and depth) between consecutive depth frames to bridge the gap with event data,
+            enabling inference at finer temporal intervals and yielding robust tracking over highly dynamic motion.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   ABSTRACT                             -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom" id="abstract">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 fade-in">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 1.5rem;">Abstract</h2>
+        <p class="abstract-text">
+          Event cameras provide microsecond latency, making them suitable for 6D object pose tracking
+          in fast, dynamic scenes where conventional RGB and depth pipelines suffer from motion blur
+          and large pixel displacements. We introduce <strong>EventTrack6D</strong>, an event-depth tracking
+          framework that generalizes to novel objects without object-specific training by reconstructing
+          both intensity and depth at arbitrary timestamps between depth frames.
+        </p>
+        <br/>
+        <p class="abstract-text">
+          Conditioned on the most recent depth measurement, our <strong>dual reconstruction</strong> recovers
+          dense photometric and geometric cues from sparse event streams. Our EventTrack6D operates
+          at over <strong>120 FPS</strong> and maintains temporal consistency under rapid motion.
+          To support training and evaluation, we introduce a comprehensive benchmark suite:
+          a large-scale synthetic dataset for training and two complementary evaluation sets,
+          including real and simulated event datasets. Trained exclusively on synthetic data,
+          EventTrack6D generalizes effectively to real-world scenarios without fine-tuning,
+          maintaining accurate tracking across diverse objects and motion patterns.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   METHOD OVERVIEW                      -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom alt-bg" id="method">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10 fade-in">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem;">
+          Method
+        </h2>
+
+        <!-- TODO: Replace src with your method overview figure -->
+        <figure class="image" style="margin-bottom: 1rem;">
+          <img src="static/images/method_overview.png" alt="Method Overview"
+               style="border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.1);"
+               onerror="this.src='https://placehold.co/960x420/f0f4ff/2c3e6b?text=Method+Overview+(replace+static%2Fimages%2Fmethod_overview.png)';" />
+        </figure>
+        <!-- TODO: Update figure caption -->
+        <p style="text-align:center; color:#6c757d; font-size:0.9rem; margin-top:0.75rem; font-style:italic;">
+          <b>Figure 2:</b> <!-- Add caption here -->
+        </p>
+
+        <!-- TODO: Add method description text here -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   VIDEO DEMO                           -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom" id="video">
+  <div class="container">
+
+    <!-- ── Main Demo Video (YouTube) ───────────────────── -->
+    <div class="columns is-centered">
+      <div class="column is-10 fade-in">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem;">
+          Video
+        </h2>
+        <!-- TODO: Replace YOUR_YOUTUBE_ID with your actual YouTube video ID -->
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_YOUTUBE_ID?rel=0&modestbranding=1"
+            title="EventTrack6D Demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <!-- TODO: Update caption -->
+        <p class="video-caption">Main demo video. Replace <code>YOUR_YOUTUBE_ID</code> in the HTML with your YouTube video ID.</p>
+      </div>
+    </div>
+
+    <!-- ── Row 1: 2 videos ──────────────────────────────── -->
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-10">
+        <h3 class="has-text-centered" style="font-family:'Google Sans',sans-serif; font-size:1.15rem;
+            font-weight:700; color:var(--primary); margin-bottom:1.5rem;">Qualitative Comparisons</h3>
+        <div class="columns fade-in">
+
+          <div class="column is-6">
+            <!-- TODO: Replace static/videos/comparison1.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/comparison1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">Comparison 1 — e.g. Ours vs. FoundationPose</p>
+          </div>
+
+          <div class="column is-6">
+            <!-- TODO: Replace static/videos/comparison2.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/comparison2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">Comparison 2 — e.g. Ours vs. ETAP</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Row 2: 3 videos ──────────────────────────────── -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <h3 class="has-text-centered" style="font-family:'Google Sans',sans-serif; font-size:1.15rem;
+            font-weight:700; color:var(--primary); margin-bottom:1.5rem;">Results on Event6D Dataset</h3>
+        <div class="columns fade-in">
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/result1.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/result1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">Result 1 — e.g. Cracker Box</p>
+          </div>
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/result2.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/result2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">Result 2 — e.g. Hammer</p>
+          </div>
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/result3.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/result3.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">Result 3 — e.g. Mustard Bottle</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Row 3: 3 videos ──────────────────────────────── -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-10">
+        <h3 class="has-text-centered" style="font-family:'Google Sans',sans-serif; font-size:1.15rem;
+            font-weight:700; color:var(--primary); margin-bottom:1.5rem;">Results on EventHO3D Dataset</h3>
+        <div class="columns fade-in">
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/ho3d1.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/ho3d1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">HO3D Result 1</p>
+          </div>
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/ho3d2.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/ho3d2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">HO3D Result 2</p>
+          </div>
+
+          <div class="column is-4">
+            <!-- TODO: Replace static/videos/ho3d3.mp4 -->
+            <div class="video-container">
+              <video controls loop muted playsinline>
+                <source src="static/videos/ho3d3.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <!-- TODO: Update caption -->
+            <p class="video-caption">HO3D Result 3</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   QUALITATIVE RESULTS                  -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom alt-bg" id="results">
+  <div class="container">
+    <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem; display:block;">
+      Qualitative Results
+    </h2>
+
+    <div class="columns is-centered fade-in">
+      <div class="column is-10">
+        <div class="columns is-multiline">
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result1.png" alt="Cracker Tracking"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Cracker+Tracking';" />
+              <div class="card-label">Cracker Box · Dynamic Motion</div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result2.png" alt="Hammer Tracking"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Hammer+Tracking';" />
+              <div class="card-label">Hammer · Rapid Rotation</div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result3.png" alt="Mustard Tracking"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Mustard+Tracking';" />
+              <div class="card-label">Mustard Bottle · Fast Translation</div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result4.png" alt="Drill Tracking"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Drill+Tracking';" />
+              <div class="card-label">Power Drill · Large Displacement</div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result5.png" alt="Depth Reconstruction"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Depth+Reconstruction';" />
+              <div class="card-label">Depth Reconstruction at τ=0.5</div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="result-card">
+              <img src="static/images/result6.png" alt="Pitcher Tracking"
+                   onerror="this.src='https://placehold.co/400x250/e8f0fe/2c3e6b?text=Pitcher+Tracking';" />
+              <div class="card-label">Pitcher · Novel Object Generalization</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   QUANTITATIVE RESULTS                 -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom">
+  <div class="container">
+    <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem; display:block;">
+      Quantitative Results
+    </h2>
+
+    <div class="columns is-centered fade-in">
+      <div class="column is-10">
+
+        <!-- TODO: Replace static/images/table1.png with your result table image -->
+        <figure class="image" style="margin-bottom: 0.75rem;">
+          <img src="static/images/table1.png" alt="Quantitative Results Table 1"
+               style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);"
+               onerror="this.src='https://placehold.co/960x280/f8faff/2c3e6b?text=Table+1+(replace+static%2Fimages%2Ftable1.png)';" />
+        </figure>
+        <!-- TODO: Update caption -->
+        <p style="text-align:center; color:#6c757d; font-size:0.88rem; font-style:italic; margin-bottom:2.5rem;">
+          Table 1: <!-- Add caption here -->
+        </p>
+
+        <!-- TODO: Replace static/images/table2.png with your second result table image -->
+        <figure class="image" style="margin-bottom: 0.75rem;">
+          <img src="static/images/table2.png" alt="Quantitative Results Table 2"
+               style="border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);"
+               onerror="this.src='https://placehold.co/960x280/f8faff/2c3e6b?text=Table+2+(replace+static%2Fimages%2Ftable2.png)';" />
+        </figure>
+        <!-- TODO: Update caption -->
+        <p style="text-align:center; color:#6c757d; font-size:0.88rem; font-style:italic;">
+          Table 2: <!-- Add caption here -->
+        </p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   PAPER PDF                            -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom alt-bg" id="paper">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10 fade-in">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 2rem; display:block;">
+          Paper
+        </h2>
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+          <a href="static/pdfs/paper.pdf" target="_blank" class="link-btn primary-btn"
+             style="background: var(--primary); border-color: var(--primary); color:#fff; padding: 0.7rem 1.5rem;">
+            <i class="fas fa-file-pdf"></i>&nbsp; Open PDF
+          </a>
+          <a href="static/pdfs/paper.pdf" download class="link-btn primary-btn"
+             style="background: var(--accent); border-color: var(--accent); color:#fff; padding: 0.7rem 1.5rem;">
+            <i class="fas fa-download"></i>&nbsp; Download PDF
+          </a>
+        </div>
+
+        <!-- PDF thumbnail preview -->
+        <div style="border: 2px solid var(--border); border-radius: 10px; overflow: hidden;
+                    box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+          <iframe src="static/pdfs/paper.pdf"
+                  width="100%" height="650px"
+                  style="display:block; border:none;"
+                  title="Paper PDF">
+            <p>Your browser does not support inline PDFs.
+               <a href="static/pdfs/paper.pdf" target="_blank">Click here to view the PDF</a>.
+            </p>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   BIBTEX                               -->
+<!-- ╚══════════════════════════════════════╝ -->
+<section class="section-custom" id="bibtex">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 fade-in">
+        <h2 class="section-title has-text-centered" style="margin: 0 auto 1.5rem; display:block;">
+          BibTeX
+        </h2>
+        <p style="text-align:center; color:var(--text-muted); margin-bottom: 1.5rem; font-size:0.95rem;">
+          If you find our work useful, please consider citing:
+        </p>
+
+        <div class="bibtex-container" id="bibtexBox">
+          <div class="bibtex-header">
+            <span>BibTeX Citation</span>
+            <button class="copy-btn" id="copyBtn" onclick="copyBibtex()">
+              <i class="far fa-copy"></i> Copy
+            </button>
+          </div>
+          <pre class="bibtex-code" id="bibtexContent">@inproceedings{kang2026event6d,
+  title     = {Event6D: Event-based Novel Object 6D Pose Tracking},
+  author    = {Kang, Jae-Young and Cho, Hoonhee and Lee, Taeyeop
+               and Kang, Minjun and Wen, Bowen
+               and Kim, Youngho and Yoon, Kuk-Jin},
+  booktitle = {Proceedings of the IEEE/CVF Conference on
+               Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
+}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   FOOTER                               -->
+<!-- ╚══════════════════════════════════════╝ -->
+<footer class="footer-custom">
+  <p>
+    <a href="https://vi.kaist.ac.kr/" target="_blank">VILAB</a> ·
+    <a href="https://www.kaist.ac.kr/" target="_blank">KAIST</a>
+  </p>
+  <div class="footer-divider"></div>
+  <p>
+    This page was built using the
+    <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies</a>
+    template, which is licensed under a
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+      CC BY-SA 4.0 License
+    </a>.
+  </p>
+</footer>
+
+
+<!-- ╔══════════════════════════════════════╗ -->
+<!--   SCRIPTS                              -->
+<!-- ╚══════════════════════════════════════╝ -->
+<script>
+  /* ── Navbar burger toggle ──────────────────── */
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('navbarBurger');
+    const menu   = document.getElementById('navbarMenu');
+    if (burger && menu) {
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('is-active');
+        menu.classList.toggle('is-active');
+      });
+    }
+
+    /* Close menu on link click (mobile) */
+    menu.querySelectorAll('.navbar-item').forEach(item => {
+      item.addEventListener('click', () => {
+        burger.classList.remove('is-active');
+        menu.classList.remove('is-active');
+      });
+    });
+  });
+
+  /* ── Scroll-triggered fade-in animations ───── */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);   // animate only once
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* ── BibTeX copy button ─────────────────────── */
+  function copyBibtex() {
+    const text = document.getElementById('bibtexContent').innerText;
+    const btn  = document.getElementById('copyBtn');
+    navigator.clipboard.writeText(text).then(() => {
+      btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.innerHTML = '<i class="far fa-copy"></i> Copy';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+
+  /* ── Smooth scrolling for anchor links ──────── */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  /* ── Image comparison slider ────────────────── */
+  document.querySelectorAll('.comparison-container').forEach(container => {
+    const after  = container.querySelector('.after');
+    const handle = container.querySelector('.slider-handle');
+    let dragging = false;
+
+    function setSlider(x) {
+      const rect = container.getBoundingClientRect();
+      const pct  = Math.min(Math.max((x - rect.left) / rect.width, 0.02), 0.98);
+      if (after)  after.style.clipPath  = `inset(0 ${(1 - pct) * 100}% 0 0)`;
+      if (handle) handle.style.left     = `${pct * 100}%`;
+    }
+
+    container.addEventListener('mousedown',  e => { dragging = true; setSlider(e.clientX); });
+    container.addEventListener('touchstart', e => { dragging = true; setSlider(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('mousemove',  e => { if (dragging) setSlider(e.clientX); });
+    document.addEventListener('touchmove',  e => { if (dragging) setSlider(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('mouseup',   () => dragging = false);
+    document.addEventListener('touchend',  () => dragging = false);
+  });
+
+  /* ── Auto-play videos when visible ──────────── */
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('video[autoplay], video.autoplay').forEach(v => videoObserver.observe(v));
+</script>
+
+</body>
+</html>
